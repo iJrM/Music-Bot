@@ -13,6 +13,11 @@ client.on('warn', console.warn);
 
 client.on('error', console.error);
 
+client.on('ready', () => {
+client.user.setGame(`M.A 🎶`,"http://twitch.tv/jrm4")
+client.user.setStatus("dnd")
+});
+
 client.on('ready', () => console.log('Yo this ready!'));
 
 client.on('disconnect', () => console.log('I just disconnected, making sure you know, I will reconnect now...'));
@@ -194,5 +199,6 @@ function play(guild, song) {
 
 	serverQueue.textChannel.send(`🎶 Start playing: **${song.title}**`);
 }
+
 
 client.login(TOKEN);
