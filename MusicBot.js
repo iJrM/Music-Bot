@@ -19,6 +19,11 @@ client.on('disconnect', () => console.log('I just disconnected, making sure you 
 
 client.on('reconnecting', () => console.log('I am reconnecting now!'));
 
+client.on('ready', () => {
+client.user.setGame(`M.A 🎶`,"http://twitch.tv/jrm4")
+client.user.setStatus("dnd")
+});
+
 client.on('message', async msg => { // eslint-disable-line
 	if (msg.author.bot) return undefined;
 	if (!msg.content.startsWith(PREFIX)) return undefined;
